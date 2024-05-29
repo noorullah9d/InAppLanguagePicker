@@ -17,6 +17,8 @@
 package com.example.views_app
 
 import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.os.LocaleListCompat
@@ -39,6 +41,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val view = binding.root
         setContentView(view)
+
+        Log.d("TAG", "onCreate: test")
 
         /* NOTE: If you were handling the locale storage on you own earlier, you will need to add a
         one time migration for switching this storage from a custom way to the AndroidX storage.
