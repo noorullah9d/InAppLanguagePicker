@@ -1,13 +1,34 @@
 package com.example.views_app
 
 import android.app.Activity
+import android.os.Bundle
 import android.view.View
+import androidx.navigation.NavController
+import androidx.navigation.NavOptions
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.views_app.databinding.DialogLanguagesLayoutBinding
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
+fun NavController.openFragment(
+    destinationId: Int,
+    addToBackStack: Boolean,
+    bundle: Bundle? = null
+) {
+    if (!addToBackStack) {
+        this.popBackStack()
+    }
+
+    val navOptions = NavOptions.Builder()
+        .setEnterAnim(R.anim.open_enter)
+        .setExitAnim(R.anim.open_exit)
+        .setPopEnterAnim(R.anim.close_enter)
+        .setPopExitAnim(R.anim.close_exit)
+        .build()
+
+    this.navigate(destinationId, bundle, navOptions)
+}
 
 fun Activity.showLanguagesBottomSheet(
     selectedLanguage: ((LanguageModel) -> Unit)
