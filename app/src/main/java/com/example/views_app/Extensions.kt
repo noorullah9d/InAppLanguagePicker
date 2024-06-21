@@ -36,7 +36,7 @@ fun Activity.showLanguagesBottomSheet(
     val binding: DialogLanguagesLayoutBinding by lazy {
         DialogLanguagesLayoutBinding.inflate(layoutInflater)
     }
-    val dialog = BottomSheetDialog(this)
+    val dialog = BottomSheetDialog(this, R.style.BottomSheetDialogTheme)
     dialog.setCancelable(true)
     dialog.setContentView(binding.root)
 

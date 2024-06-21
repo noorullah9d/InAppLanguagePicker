@@ -71,7 +71,7 @@ class LanguagesAdapter(
                     root.setBackgroundColor(ContextCompat.getColor(languageName.context, R.color.purple_200))
                     languageLocalName.setTextColor(ContextCompat.getColor(languageLocalName.context, R.color.white))
                 } else {
-                    root.setBackgroundColor(ContextCompat.getColor(languageName.context, R.color.white))
+                    root.setBackgroundColor(ContextCompat.getColor(languageName.context, R.color.tile))
                     languageLocalName.setTextColor(ContextCompat.getColor(languageLocalName.context, R.color.purple_200))
                 }
                 root.setOnClickListener {
